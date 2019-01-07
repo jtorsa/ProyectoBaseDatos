@@ -42,7 +42,7 @@
             echo $fecha;
        }else{
        
-            echo "No se puede no no no mostrar la noticia";
+            echo "No se puede mostrar la noticia";
             
        }
     ?>
