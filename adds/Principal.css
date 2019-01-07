@@ -1,0 +1,39 @@
+.cabecera{
+    background-image: url(images/architecture-basket-basketball-1332237.jpg);
+    background-size: 100%;
+    height: 230px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.header{
+    border-bottom-color: green;
+    height: 200px;
+    width: 100%; 
+}
+.ilogo{
+    position: absolute;top 20px;
+}
+
+.nav{
+    padding-left: 10px;
+    height: 30px;
+    width: 100%;
+}
+
+.enlace{
+    color: orange;
+    font-weight: bold;
+}
+
+
+.noticia{
+    height: 500px;
+    width: 100%;
+    margin-right: 0px;
+    padding: 30px;
+}
+.noticiero{
+    height: 500px;
+    width: 100%;
+    margin-left: 0px;
+}

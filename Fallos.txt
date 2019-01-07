@@ -1,0 +1,12 @@
+1. Corregir que no se pueda crear varios usuarios con el mismo Nick.
+2. Añadir el correo electronico al registro. /
+3. Poner la posibilidad de recuperar la contraseña mediante un correo.
+4. Crear la pagina del root en el que poder modificar, borrar y crear todo.
+5. Mejorar el diseño.
+6. Cambiar el input text del cuerpo de la noticia.
+7. Arreglar enlances a cada noticia. /
+8. Mostrar los comentarios de cada noticia. /
+9. Mostrar las noticias según el mes de creación.
+10. Crear pagina para los ROOT
+11. Encriptar contraseña. /
+12. Pagina personal para cada usuario.
