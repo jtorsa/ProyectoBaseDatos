@@ -20,10 +20,11 @@
             }
         }
     
+        try{
         $dwes = "mysql:host=localhost;dbname=proyecto";
         $conexion = new PDO($dwes, 'JuanBlog', 'JuanBlog');
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql="SELECT * FROM `noticias` WHERE Identificador >((SELECT MAX(Identificador) FROM noticias)-5) ORDER BY Identificador DESC";
+        $sql="SELECT * FROM `noticias` WHERE Identificador ORDER BY Identificador DESC LIMIT 5";
         $resultado=$conexion->query($sql);
     
         $registro=$resultado->rowCount();
@@ -31,7 +32,9 @@
         while($fila=$resultado->fetch()){
             mostrarDatos($fila);
         }
-    
+    }catch(PDOException $e){
+            echo "No se pueden mostrar las noticias";
+        }
     
     ?>
 </body>

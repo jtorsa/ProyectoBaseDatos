@@ -32,15 +32,13 @@
             $nombre=$fila["Nick"];
             
             
-            echo "<br><br>".$cuerpo."</br>";
+            echo "<br><br><h6>".$cuerpo."</h6></br>";
                 if($fecha==$actual){
-                    echo "<h6>Comentado hoy por ".$nombre.".</h6></br>";
+                    echo "Comentado hoy por ".$nombre.".</br>";
                 }else{
-                     echo "<h6>Comentado por ".$nombre." el día ".$fecha.".</h6></br>";
+                     echo "Comentado por ".$nombre." el día ".$fecha.".</br>";
                 }
-                if($_SESSION["usuario"]==$nombre||isset($_SESSION['root'])){
-                    echo '<a href="borrarComentario.php?borra='.$id.'">Borrar Comentario</a>';
-                }
+                
             }
         }
     

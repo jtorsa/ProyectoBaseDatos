@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+<style>
+    p{
+        text-align: center;
+    }
+    </style>
 <body>
     <?php
         $dwes = "mysql:host=localhost;dbname=proyecto";
@@ -36,10 +41,9 @@
             $nombre=$fila["Nick"];
             
             echo '<h3 style="text-align:center">'.$titulo.'</h3></br>';
-            echo 'Noticia publicada por '.$nombre.'<br>';
+            echo '<p>Noticia publicada por '.$nombre.'</p><br>';
             echo '<p style="color: grey">Fecha de publicación: '.$fecha.'</p>';
             echo "<p>".$cuerpo."</p></br>";
-            echo $fecha;
        }else{
        
             echo "No se puede mostrar la noticia";

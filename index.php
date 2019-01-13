@@ -12,31 +12,25 @@
 </head>
 
 <body>
-    <section class="cabecera">
-        <section class="header">
-            <div class="container">
-                <img class="logo" src="adds/images/Logo.png" alt="logo">
-            </div>
-        </section>
-        <section class="nav">
-            <nav id="menu">
-
-                <a class="enlace" href="usuarioNuevo.php">Registro</a>
-                <a class="enlace">|</a>
-                <a class="enlace" href="login.php">Login</a>
-                <a class="enlace">|</a>
-                <a class="enlace" href="calendario.php">Noticias</a>
-
-
-            </nav>
-        </section>
-    </section>
+    <?php
+        session_start();
+        require_once("style.inc.php");
+    
+    if(isset($_SESSION['root'])){
+            require("adds/cabeceraRoot.inc.php");
+        }
+     else if(!isset($_SESSION["usuario"])){
+            require("adds/cabecera.inc.php");
+        }else{
+         require("adds/cabeceraReg.inc.php");
+     }
+    ?>
     <section class="principal">
         <div class="row">
             <div class="col-md-9">
                 <div class="noticia">
                     <?php
-                        require_once("mostrarNoticia.php");
+                        require_once("noticieroMini.inc.php");
                     ?>
                 </div>
             </div>
@@ -44,13 +38,12 @@
                 <div class="noticiero">
                    <h4></h4>
                     <?php
-                        require_once("noticieroMini.inc.php");
+                        require_once("calendario.php");
                     ?>
                 </div>
             </div>
         </div>
     </section>
-
 
 
 

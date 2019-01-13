@@ -24,7 +24,7 @@
             $stmt = $conexion->prepare("INSERT INTO noticias (Titulo, Cuerpo , Fecha , Usuario) VALUES (?, ?, ?, ?)");
             // Bind
             $titulo = $_POST['titulo'];
-            $cuerpo= $_POST['cuerpo'];
+            $cuerpo= nl2br(htmlentities($_POST['cuerpo'],ENT_QUOTES,'UTF-8'));
             $fecha = date('Y-m-d H:i:s');
             $user = $_SESSION["id"];
             
@@ -37,6 +37,8 @@
             try {
             // Execute
             $stmt->execute();
+            echo "La noticia ha sido introducida correctamente";
+                header("location:registrados.php");
                  } catch (PDOException $e){
             echo $e->getMessage();
             }

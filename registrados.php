@@ -10,27 +10,15 @@
     ?>
 </head>
 <body>
-  <section class="cabecera">
-        <section class="header">
-            <div class="container">
-                <img class="logo" src="adds/images/Logo.png" alt="logo">
-            </div>
-        </section>
-        <section class="nav">
-            <nav id="menu">
+  <?php
+        require_once("style.inc.php");
 
-                <a class="enlace" href="noticiaNueva.php">Crear noticia</a>
-                <a class="enlace">|</a>
-                <a class="enlace" href="noticiero.inc.php">Noticiario</a>
-                <a class="enlace" >|</a>
-                <a class="enlace" href="index.php">Inicio</a>
-                <a class="enlace" >|</a>
-                <a class="enlace" href="logout.inc.php">Cerrar sesión</a>
-
-
-            </nav>
-        </section>
-    </section>
+     if(!isset($_SESSION["usuario"])){
+            require("adds/cabecera.inc.php");
+        }else{
+         require("adds/cabeceraReg.inc.php");
+     }
+    ?>
    <?php
        // session_start();
         if(!isset($_SESSION["usuario"])){
@@ -40,15 +28,34 @@
     
     
     ?>
-    <h1>Esta pagina es para Usuarios registrados</h1>
     <?php
-        echo "Pagina personal de " . $_SESSION["usuario"]."<br>";
+        echo "Pagina personal de <h5>" . $_SESSION["usuario"]."</h5><br>";
      ?>
-     
-     <?php
-     require_once("mostrarNoticia.php");
-     require_once("nuevoComentario.php");
-     require_once("mostrarComentarios.php");
-    ?>
+     <section class="principal">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="noticia">
+                    <?php
+                        require_once("noticieroMini.inc.php");
+                    ?>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="noticiero">
+                    <?php
+                        require_once("calendario.php");
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <?php
+                if(!isset($_SESSION["usuario"])){
+                   require_once("mostrarComentarios.php");
+                }
+            ?>
+        </div>
+    </section>
+
 </body>
 </html>

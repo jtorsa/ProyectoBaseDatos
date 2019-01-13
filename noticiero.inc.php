@@ -5,9 +5,18 @@
     <title>Document</title>
 </head>
 <body>
-   <a href="index.php">Inicio</a>
     <?php
-        function mostrarDatos($resultado){
+        require_once("style.inc.php");
+        session_start();
+       if(isset($_SESSION['root'])){
+            require("adds/cabeceraRoot.inc.php");
+        }
+     else if(!isset($_SESSION["usuario"])){
+            require("adds/cabecera.inc.php");
+        }else{
+         require("adds/cabeceraReg.inc.php");
+     }
+        function mostrarUsuario($resultado){
             if($resultado !=NULL){
          
             $id=$resultado['Identificador'];
@@ -17,7 +26,9 @@
             
             echo "<h5>".$titulo."</h5></br>";
             echo "<p>".$cuerpo."</p></br>";
-            echo '<a href="noticiaRequerida.php?no='.$id.'">Leer Más</a>';
+            echo '<a href="noticiaRequerida.php?no='.$id.'">Leer Más</a><br>';
+            echo '<a href="borrarNoticia.php?borra='.$id.'">Borrar Noticia</a>';
+                }
             }
         }
     
@@ -30,10 +41,11 @@
         $registro=$resultado->rowCount();
     
         while($fila=$resultado->fetch()){
-            mostrarDatos($fila);
+            mostrarUsuario($fila);
         }
     
     
     ?>
+    
 </body>
 </html>

@@ -39,8 +39,8 @@
                  } catch (PDOException $e){
             echo $e->getMessage();
             }
-            echo $stmt->errorCode();
-            print_r($stmt->errorInfo());
+            //echo $stmt->errorCode();
+           // print_r($stmt->errorInfo());
         }
     
     ?>

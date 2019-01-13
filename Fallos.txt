@@ -10,3 +10,4 @@
 10. Crear pagina para los ROOT
 11. Encriptar contraseña. /
 12. Pagina personal para cada usuario.
+13. Modular la cabecera con un if.
