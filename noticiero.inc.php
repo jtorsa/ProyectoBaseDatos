@@ -27,6 +27,7 @@
             echo "<h5>".$titulo."</h5></br>";
             echo "<p>".$cuerpo."</p></br>";
             echo '<a href="noticiaRequerida.php?no='.$id.'">Leer Más</a><br>';
+                if(isset($_SESSION["root"])){
             echo '<a href="borrarNoticia.php?borra='.$id.'">Borrar Noticia</a>';
                 }
             }
